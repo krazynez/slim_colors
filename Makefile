@@ -21,3 +21,13 @@ LIBS = -lpspexploit -lpsprtc
 
 PSPSDK = $(shell psp-config -p)
 include $(PSPSDK)/lib/build.mak
+
+clean:
+	rm -rf $(TARGET).prx $(TARGET).elf $(OBJS) PARAM.SFO $(EXTRA_TARGETS) PSP *.zip
+
+
+pkg: clean all
+	-mkdir -p PSP/GAME/Slim_Colors_For_Phat
+	-cp EBOOT.PBP PSP/GAME/Slim_Colors_For_Phat/
+	-zip -r Slim_Colors_For_Phat.zip PSP
+
