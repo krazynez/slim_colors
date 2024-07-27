@@ -29,5 +29,5 @@ clean:
 pkg: clean all
 	-mkdir -p PSP/GAME/Slim_Colors_For_Phat
 	-cp EBOOT.PBP PSP/GAME/Slim_Colors_For_Phat/
-	-zip -r Slim_Colors_For_Phat.zip PSP
+	-zip -r Slim_Colors_For_Phat.zip README.md PSP
 
