@@ -16,7 +16,7 @@ BUILD_PRX = 1
 
 INCDIR = ./inc
 LIBDIR = ./lib
-LIBS = -lpspexploit -lpsprtc
+LIBS = -lpspexploit -lpsprtc -lpspctrl
 
 
 PSPSDK = $(shell psp-config -p)
