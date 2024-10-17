@@ -7,7 +7,7 @@
 #include "slim_colors.h"
 #include "colors_3g.h"
 
-PSP_MODULE_INFO("Extened Colors", 0, 1, 1);
+PSP_MODULE_INFO("Extened Colors", 0, 2, 1);
 
 #define printf pspDebugScreenPrintf
 
