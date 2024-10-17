@@ -7,7 +7,7 @@
 #include "slim_colors.h"
 #include "colors_3g.h"
 
-PSP_MODULE_INFO("Extened Colors", 0, 1, 0);
+PSP_MODULE_INFO("Extened Colors", 0, 1, 1);
 
 #define printf pspDebugScreenPrintf
 
@@ -79,7 +79,7 @@ void kmain_thread() {
 		while(diff) {
 			k_tbl->KernelDelayThread(8000);
 			prxCtrlReadBufferPositive(&pad, 1);
-			if(pad.Buttons == 0x1a044000) { // CROSS
+			if(pad.Buttons == 0x1a044000 || pad.Buttons == PSP_CTRL_CROSS) { // CROSS
 				k_tbl->KernelIOClose(flash_3g);
 				printf("Overwriting 01-12.bmp with Slim versions\n");
 				k_tbl->KernelIORemove("flash0:/vsh/resource/01-12.bmp");
@@ -89,7 +89,7 @@ void kmain_thread() {
 				k_tbl->KernelDelayThread(1000000);
 				return;
 			}
-			if(pad.Buttons == 0x1a042000) { // CIRCLE
+			if(pad.Buttons == 0x1a042000 || pad.Buttons == PSP_CTRL_CIRCLE) { // CIRCLE
 				k_tbl->KernelIOClose(flash_3g);
 				break;
 			}
@@ -120,7 +120,7 @@ void kmain_thread() {
 		while(diff) {
 			k_tbl->KernelDelayThread(8000);
 			prxCtrlReadBufferPositive(&pad, 1);
-			if(pad.Buttons == 0x1a044000) { // CROSS
+			if(pad.Buttons == 0x1a044000 || pad.Buttons == PSP_CTRL_CROSS) { // CROSS
 				k_tbl->KernelIOClose(flash_3g);
 				printf("Overwriting 01-12.bmp with Slim versions\n");
 				k_tbl->KernelIORemove("flash0:/vsh/resource/01-12.bmp");
@@ -130,7 +130,7 @@ void kmain_thread() {
 				k_tbl->KernelDelayThread(1000000);
 				return;
 			}
-			if(pad.Buttons == 0x1a042000) { // CIRCLE
+			if(pad.Buttons == 0x1a042000 || pad.Buttons == PSP_CTRL_CIRCLE) { // CIRCLE
 				k_tbl->KernelIOClose(flash_3g);
 				break;
 			}
